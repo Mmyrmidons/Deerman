@@ -1,0 +1,58 @@
+
+
+		<a name="contactUs"></a>
+		<iframe width="100%" height="500" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=Joe's%20Farmers%20Place%2C%20South%20Edmeston%2C%20NY&key=AIzaSyA4NT_swnI5_4caRmu4bYZ93tLjBbqHAv8&zoom=15" allowfullscreen></iframe>
+
+		<h6>Contact details</h6>
+		<p>256 County Hwy 20</p>
+		<p>South Edmeston, NY 13411</p>
+		<p>(607) 847-8234</p>
+		<a href="mailto:deerman25622@yahoo.com">deerman25622@yahoo.com</a>
+
+		<h6>Hours of operation</h6>
+		<table>
+			<tr>
+				<td valign="top">Mon - Fri</td>
+				<td valign="top">8:00 am - 5:00 pm</td>
+			</tr>
+			<tr>
+				<td valign="top">Saturday</td>
+				<td valign="top">8:00 am - 12:00 pm</td>
+			</tr>
+			<tr>
+				<td valign="top">Sunday</td>
+				<td valign="top">Closed</td>
+			</tr>
+		</table>
+
+		<h6>Payment methods</h6>
+		<p>We accept:  Cash, Check, Visa, M/C, Amex, Discover, Debit, EBT, SNAP</p>
+
+		<h6>Send us a message</h6>
+
+		<form method="post" class="contactUsForm" action="/sendusamessage">
+			<div>
+				<label>Name:</label> 
+				<input type="text" name="messagersName">
+			</div>
+			<div>
+				<label>Email (required):</label> 
+				<input type="email" name="messagersEmail" class="formEmail">
+			</div>
+			<div>
+				<label>Phone:</label> 
+				<input type="tel" name="messagersPhone">
+			</div>
+			<div>
+				<label>Message (required):</label> 
+				<textarea name="message" class="formMessage"></textarea> 
+			</div>
+
+			<div class="g-recaptcha dmforminput" data-sitekey="6Ldk8YsUAAAAAP8vPHl_7Am_vX9VRA2dtaXGymPc"></div>
+
+			<div>
+				<input class="formsSubmitButton" name="submit" type="submit" value="Send Message" style="margin-bottom: 48px;">
+			</div>
+		</form>
+
+		<label class="formStatusMessage"></label>

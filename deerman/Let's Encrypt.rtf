@@ -1,0 +1,25 @@
+deerman@Deerman:~$ sudo certbot certonly --webroot -w /home/deerman/deerman/public -d www.joesfarmersplace.net -d joesfarmersplace.net
+[sudo] password for deerman: 
+Saving debug log to /var/log/letsencrypt/letsencrypt.log
+Plugins selected: Authenticator webroot, Installer None
+Obtaining a new certificate
+Performing the following challenges:
+http-01 challenge for joesfarmersplace.net
+http-01 challenge for www.joesfarmersplace.net
+Using the webroot path /home/deerman/deerman/public for all unmatched domains.
+Waiting for verification...
+Cleaning up challenges
+
+IMPORTANT NOTES:
+ - Congratulations! Your certificate and chain have been saved at:
+   /etc/letsencrypt/live/www.joesfarmersplace.net/fullchain.pem
+   Your key file has been saved at:
+   /etc/letsencrypt/live/www.joesfarmersplace.net/privkey.pem
+   Your cert will expire on 2019-11-27. To obtain a new or tweaked
+   version of this certificate in the future, simply run certbot
+   again. To non-interactively renew *all* of your certificates, run
+   "certbot renew"
+ - If you like Certbot, please consider supporting our work by:
+
+   Donating to ISRG / Let's Encrypt:   https://letsencrypt.org/donate
+   Donating to EFF:                    https://eff.org/donate-le
