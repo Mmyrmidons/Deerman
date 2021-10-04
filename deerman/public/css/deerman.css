@@ -22,7 +22,6 @@ body * {
 
 .header ul {
 	float: left;
-	display: none;
 }
 
 .header .masthead * {
@@ -30,10 +29,9 @@ body * {
 	float: right;
 }
 
-
-
-
-
+.contactUs {
+	display: block;
+}
 
 
 .butchersBlock {
@@ -41,7 +39,7 @@ body * {
 	width: 1024px;
 }
 
-.butchersBlock > a {
+a {
 	text-decoration: none;
 	color: darkslategray
 }
@@ -54,6 +52,11 @@ body * {
 .butchersBlock span {
 	padding: 0 3px 0 0;
 }
+
+.facebook {
+	border: 1px solid var(--grass);
+}
+
 .formError {
 	border: 1px solid firebrick;
 }
@@ -63,13 +66,42 @@ body * {
 }
 
 .placeForFreshMeat {
-	padding: 70px 120px;
+	padding: 48px 120px;
 }
 
 .orderForm {
 	display: block;
 	float: left;
-	margin-bottom: 248px;
+	width: 50%;
+	color: var(--rock);
+}
+
+.orderForm table {
+	width: 100%;
+}
+
+.facebook {
+	padding-left: 12px;
+	float: left;
+	width: 50%;
+}
+
+.messages {
+	padding-bottom: 24px;
+}
+
+i {
+	padding-right: 6px;
+}
+
+.messages > div {
+	float: left;
+	width: 33%;
+	padding: 36px 12px;
+}
+
+.messages p {
+	padding: 6px 0;
 }
 
 .pricing {
@@ -94,7 +126,7 @@ body * {
 
 
 .animalFarm {
-	height: 30px;
+	height: 100px;
 	width: 100%;
 }
 
@@ -107,34 +139,41 @@ body * {
 }
 
 .animalFarm .animal {
-	width: 60px;
+	width: 100px;
+	height: 60px;
+	background-position: bottom left;
 	position: absolute;
+	transform: scaleX(1);
+	transition: all 0.3s;
+}
+
+.animalFarm .facingBackwards {
+	transform: scaleX(-1);
 }
 
 .animalFarm div {
-	height: 30px;
 	position: relative;
 	background-repeat: no-repeat;
-	background-size: 60px 30px;	
 }
 
 .animalFarm div.grass {
 	background-image: url(/img/farmanimals/grass.png);
 	background-repeat: repeat-x;
-	background-size: 100px 20px;
+	background-size: 100px 15px;
 	background-position: bottom;
 	width: 100%;
+	height: 60px;
 }
 
 .animalFarm div.cow {
 	background-image: url(/img/farmanimals/cow.png);
-	background-size: 50px 30px;
+	background-size: 80px 48px;
 }
 
 .animalFarm div.steer {
 	background-image: url(/img/farmanimals/steer.png);
-	background-size: 50px 30px;	
-}
+/*	background-size: 50px 30px;
+*/}
 
 .animalFarm div.goat {
 	background-image: url(/img/farmanimals/goat.png);
@@ -143,7 +182,7 @@ body * {
 
 .animalFarm div.pig {
 	background-image: url(/img/farmanimals/pig.png);
-	background-size: 45px 30px;
+	background-size: 58px 36px;
 }
 
 .animalFarm div.sheep {
@@ -152,13 +191,15 @@ body * {
 }
 
 .animalFarm div.rooster {
+	width: 22px;
 	background-image: url(/img/farmanimals/rooster.png);
-	background-size: 40px 40px;
+	background-size: 22px 22px;
 }
 
 .animalFarm div.chicken {
+	width: 20px;
 	background-image: url(/img/farmanimals/chicken.png);
-	background-size: 35px 35px;
+	background-size: 20px 20px;
 }
 
 .animalFarm div.duck {
@@ -191,3 +232,10 @@ body * {
 	width: 40px;
 	height: 40px;
 }
+
+:root {
+	--grass: rgb(163, 203, 42);
+	--daisyeye: rgb(228, 192, 36);
+	--rock: rgb(145, 84, 54);
+}
+

@@ -17,7 +17,7 @@ const handlebars = require('express-handlebars').create({
 	}	
 })
 const deermail = require('./modz/deermail')
-const pjson = require('../package.json')
+const pjson = require('./package.json')
 require('./modz/logz').initLogz(app)
 require('./modz/errorz').initErrorEmailz()
 

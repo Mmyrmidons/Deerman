@@ -1,7 +1,7 @@
 var deerman = (function() {
     var onReady = function() {
-		initEvents()
-		feedAnimals()
+		initEvents()		
+		animalFarms.openBarnDoor()
 	}
 	
 	var initEvents = function() {
@@ -66,26 +66,96 @@ var deerman = (function() {
 			}
 		})
 	}
-		
-	var feedAnimals = function() {
-		var animals = ["cow", "cow", "cow", "steer", "goat", "goat", "pig", "pig", "sheep", "rooster", "chicken", "chicken", "duck"]
-		var animalFarms = $('.animalFarm')
-
-		animalFarms.each(function( index ) {
-			var left = Math.floor(parseInt(animalFarms.first().css("width")) / 2)
 	
-			for (var i = 0; i < 5; i++) {
-				var animal = Math.floor((Math.random() * 13) + 1)
-					
-				$(this).prepend("<div></div>")
-					$(this).find('div:first').addClass("animal").addClass(animals[animal]).css("left", left + "px")
-					
-					if (i > 0)
-						left = Math.floor(left / 2)
-//						else if (i == 1)
-//							left += Math.floor(left / 2)
-			}
-		})
+	var randomAgriculturalNumber = function(ofHowMany) {
+		return Math.floor((Math.random() * ofHowMany))
+	}
+	
+	var animalFarms = {
+		openBarnDoor: function() {
+			this.feedAnimals()
+			this.animalsFidget()
+		},
+		
+		animalsFidget: function() {
+			setInterval(function () {
+				const animal = $(".animal:eq(" + randomAgriculturalNumber($(".animal").length) + ")")
+				const left = parseInt(animal.css("left"))
+				const chickenSpeed = 10 * randomAgriculturalNumber(9)
+				
+				if (randomAgriculturalNumber(4) == 0) {
+					if (animal.hasClass("facingBackwards")) {
+						animal.css("left", left - chickenSpeed)
+					} else {					
+						animal.css("left", left + chickenSpeed)
+					}
+				} else {
+					if (animal.hasClass("facingBackwards"))
+						animal.removeClass("facingBackwards")
+					else
+						animal.addClass("facingBackwards")
+				}
+			}, 1000)
+		},
+		
+		releaseTheChickens: function(pasture) {
+			const chickensInPasture = 28
+			const acreage = Math.floor(parseInt(pasture.css("width")))
+			const middleOfPasture = acreage / 2
+			const chickenTerritory = acreage / chickensInPasture / 1.9
+
+			for (var i = 0; i < chickensInPasture; i++) {
+				var grazingSpot = middleOfPasture + i * chickenTerritory * ((i % 2) ? -1 : 1) + randomAgriculturalNumber(110)
+				var jungleFowl = randomAgriculturalNumber(12) == 0 ? "rooster" : "chicken"
+				var thisBird = $("<div class='animal " + jungleFowl + "'></div>").prependTo(pasture)
+		
+				thisBird.css("left", grazingSpot + "px")
+			
+				if (randomAgriculturalNumber(6) == 0)
+					thisBird.addClass("facingBackwards")
+			}			
+		},
+
+		feedAnimals: function() {
+			var animals = ["cow", "cow", "cow", "steer", "goat", "goat", "pig", "pig", "sheep", "rooster", "chicken", "chicken", "duck"]
+			var pastures = $('.animalFarm')
+
+			pastures.each(function() {				
+				animalFarms.releaseTheChickens($(this))
+				
+				
+			// var todaysChickenOrientation = randomAgriculturalNumber == 0
+			
+				// var inMyChickenFace = function(grazingSpot) {
+				// 	for (var j = 0; j < grazingSpots.length; j++) {
+				//
+				//
+				//
+				//
+				//
+				// 	console.log("Happy Birthday Ozzi: " + Math.abs(grazingSpots[j]) + " :::: " + grazingSpot)
+				//
+				// 	// if ((Math.abs( grazingSpots[j]) - grazingSpot) < 100)
+				// 	// 	return true
+				//
+				// 	return false
+				// 	}
+				// }
+
+
+
+			// for (var i = 0; i < 5; i++) {
+			// 	var animal = Math.floor((Math.random() * animals.length) + 1)
+			//
+			// 	$(this).prepend("<div></div>")
+			// 		$(this).find('div:first').addClass("animal").addClass(animals[animal]).css("left", grazingSpot + "px")
+			//
+			// 	grazingSpot = grazingSpot / 2 * -1
+			//
+			// 	console.log("Happy Birthday Ozzi: " + (Math.random() < 0.5) ? 1:-1)
+			// }
+			})
+		}
 	}
 	
     return {
