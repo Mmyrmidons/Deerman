@@ -118,7 +118,7 @@ var deerman = (function() {
 
 		feedAnimals: function() {
 			var animals = ["cow", "cow", "cow", "steer", "goat", "goat", "pig", "pig", "sheep", "rooster", "chicken", "chicken", "duck"]
-			var pastures = $('.animalFarm')
+			var pastures = $('.pasture')
 
 			pastures.each(function() {				
 				animalFarms.releaseTheChickens($(this))

@@ -125,12 +125,16 @@ i {
 }
 
 
-.animalFarm {
+.pasture {
 	height: 100px;
 	width: 100%;
 }
 
-.animalFarm .stalactites {
+.pasture:last-of-type {
+	height: 60x ;
+}
+
+.pasture .stalactites {
 	height: 30px;
 	width: 100%;
 	background-image: url(/img/farmanimals/rocks.png);
@@ -138,7 +142,7 @@ i {
 	background-size: 300px 16px;
 }
 
-.animalFarm .animal {
+.pasture .animal {
 	width: 100px;
 	height: 60px;
 	background-position: bottom left;
@@ -147,16 +151,16 @@ i {
 	transition: all 0.3s;
 }
 
-.animalFarm .facingBackwards {
+.pasture .facingBackwards {
 	transform: scaleX(-1);
 }
 
-.animalFarm div {
+.pasture div {
 	position: relative;
 	background-repeat: no-repeat;
 }
 
-.animalFarm div.grass {
+.pasture div.grass {
 	background-image: url(/img/farmanimals/grass.png);
 	background-repeat: repeat-x;
 	background-size: 100px 15px;
@@ -165,44 +169,44 @@ i {
 	height: 60px;
 }
 
-.animalFarm div.cow {
+.pasture div.cow {
 	background-image: url(/img/farmanimals/cow.png);
 	background-size: 80px 48px;
 }
 
-.animalFarm div.steer {
+.pasture div.steer {
 	background-image: url(/img/farmanimals/steer.png);
 /*	background-size: 50px 30px;
 */}
 
-.animalFarm div.goat {
+.pasture div.goat {
 	background-image: url(/img/farmanimals/goat.png);
 	background-size: 30px 30px;
 }
 
-.animalFarm div.pig {
+.pasture div.pig {
 	background-image: url(/img/farmanimals/pig.png);
 	background-size: 58px 36px;
 }
 
-.animalFarm div.sheep {
+.pasture div.sheep {
 	background-image: url(/img/farmanimals/sheep.png);
 	background-size: 40px 30px;
 }
 
-.animalFarm div.rooster {
+.pasture div.rooster {
 	width: 22px;
 	background-image: url(/img/farmanimals/rooster.png);
 	background-size: 22px 22px;
 }
 
-.animalFarm div.chicken {
+.pasture div.chicken {
 	width: 20px;
 	background-image: url(/img/farmanimals/chicken.png);
 	background-size: 20px 20px;
 }
 
-.animalFarm div.duck {
+.pasture div.duck {
 	background-image: url(/img/farmanimals/duck.png);
 	background-size: 40px 29px;
 }

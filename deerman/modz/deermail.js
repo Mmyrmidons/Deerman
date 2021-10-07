@@ -12,7 +12,7 @@ const createTransporter = function() {
 }
 
 exports.sendEmailToTheDeerman = function(req, res) {
-	if (req.body["g-recaptcha-response"]) {
+	// if (req.body["g-recaptcha-response"]) {
 		var message = "Message from: "
 		
 		if (req.body.messagersName)
@@ -53,8 +53,8 @@ exports.sendEmailToTheDeerman = function(req, res) {
 		})
 	
 		res.json({result: "success"})
-	} else
-		res.json({result: "robot"})
+	// } else
+	// 	res.json({result: "robot"})
 }
 
 exports.sendErrorMessage = function(message) {
