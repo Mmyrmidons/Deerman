@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-5296800-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-5296800-1');
+</script>
 	<title>Beef | Edmeston, NY | Farmers Place</title>
     <link rel="Shortcut Icon" href="/img/favicon.ico"/>
 	<meta http-equiv="Content-type" content="text/html;charset=utf-8">
@@ -23,7 +32,9 @@
 </head>
 <body>
 	{{> header }}
+	{{> pasture}}
 	{{{ body }}}
+	{{> pasture}}
 	{{> footer }}
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

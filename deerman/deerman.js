@@ -38,25 +38,23 @@ app.use(function(req, res, next) {
 })
 
 app.get('/', function(req, res) {
-    res.render('manners')
+    res.render('home')
 })
 
-//app.get('/services', function(req, res) {
-//    res.render('services')
-//})
-//
-//app.get('/world-cup', function(req, res) {
-//    res.render('world-cup')
-//})
-//
-//app.get('/contact', function(req, res) {
-//    res.render('contact')
-//})
-//
-app.get('/manners', function(req, res) {
-    res.render('manners', {
-        layout: 'misstikki'
-    })
+app.get('/services', function(req, res) {
+   res.render('services')
+})
+
+app.get('/world-cup', function(req, res) {
+   res.render('world-cup')
+})
+
+app.get('/contact-us', function(req, res) {
+   res.render('contact-us')
+})
+
+app.get('/analytics', function(req, res) {
+   res.render('contact')
 })
 
 app.post('/sendusamessage', function(req, res) {
