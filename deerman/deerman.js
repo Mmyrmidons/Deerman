@@ -34,7 +34,7 @@ app.use(function(req, res, next) {
 	if (req.headers.host == "localhost" || req.secure)
 		next()
 	else
-		res.redirect("https://" + req.headers.host.replace(/\d+$/, securePort) + req.hostname)
+		res.redirect("https://" + req.headers.host.replace(/\d+$/, securePort))
 })
 
 app.get('/', function(req, res) {
@@ -54,7 +54,7 @@ app.get('/contact-us', function(req, res) {
 })
 
 app.get('/analytics', function(req, res) {
-   res.render('contact')
+   res.render('analytics')
 })
 
 app.post('/sendusamessage', function(req, res) {
